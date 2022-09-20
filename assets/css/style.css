@@ -443,14 +443,27 @@ p {
 
 .brand-grid{
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  justify-content: center;
-  width: 100%;
+  grid-template-columns: repeat(4, auto);
+  justify-items: stretch;
+  grid-gap: 5px;
+  background-color:#918e93;
+}
+
+.brand-container{
+  align-self: center;
 }
 
 .brand-container img{
-  display:block;
-  margin: auto;
   width: 100px;
   padding: 10px;
+}
+
+.modal {
+  --bs-modal-width: 650px;
+}
+
+.modal-header{
+  background-color: #918e93;
+  border: none;
+  padding: 15px;
 }

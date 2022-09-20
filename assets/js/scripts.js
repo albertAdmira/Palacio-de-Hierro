@@ -10,37 +10,48 @@ $(document).ready(function(){
 
 
 	var brandLogos = [
-		"acer","asus","bose","bosé","dell","echo","fitbit-luxe",
+		"acer","asus","bose","dell","echo","fitbit-luxe",
 		"fitbit-sense","garmin","google","homedics","hp","hypervolt-bluetooth","jetson",
 		"joy-resolve","kef","kindle","krups","lenovo","lg","mavic-3","miele",
 		"monitor-audio","msi","polar-pacer-pro","roku","samsung","sonos","sony",
 	]
 
-	$(".signature").click(function(){
+	$(".signature").dblclick(function(event){
+		
+		event.preventDefault();
+
+		$(".momentum-body").append(
+			`<div class="modal fade" id="brandModal" tabindex="-1" aria-labelledby="brandModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+			  <div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body brand-grid"></div>
+			  </div>
+			</div>
+		  </div>`
+		);
 
 		brandLogos.forEach((element) => {
-
 			
-			if(element === 'acer' || element === 'Acer') {
-				element = "acer/predator";
-			}
-			
-			var finalSrc = `assets/images/${element}/${element}-logo.ai`;
-
-			console.log(finalSrc)
+			var finalSrc = `assets/images/${element}/${element}-logo.png`;
 
 			$(".brand-grid").append(
 				`<div class="brand-container">
-					<img src=${finalSrc} alt="${element}" data-bs-toggle="modal" data-bs-target="#brandModal" class="signature"></img>
+					<button type="button" class="btn btn-link" id="${element}">
+						<img src=${finalSrc} alt="${element}" data-bs-toggle="modal" data-bs-target="#brandModal" class="signature"></img>
+					</button>
 				</div>`
 			);
 			
 		});
+		
 	})
 
-	$("#close-modal").click(function(){
-	})
-
+	$(".modal").on("hidden.bs.modal", function(){
+		$(".brand-container").remove()
+	});
 	
 });
 
