@@ -13,6 +13,7 @@ $(document).ready(function(){
 	});
 
 
+	/*
 	var brandLogos = [
 		"acer","asus","bose","dell","echo","fitbit-luxe",
 		"fitbit-sense","garmin","google","homedics","hp","hypervolt-bluetooth","jetson",
@@ -56,7 +57,7 @@ $(document).ready(function(){
 	$(".modal").on("hidden.bs.modal", function(){
 		$(".brand-container").remove()
 	});
-	
+	*/
 });
 
 

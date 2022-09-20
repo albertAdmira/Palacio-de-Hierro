@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
-<body class="momentum-body-1" id="acer-logo">
+<body class="momentum-body" id="acer-logo">
   <!-- Start Header Area -->
   <header class="header-area">
     <div class="container">
@@ -36,7 +36,7 @@
   <div class="backround-video">
     <a href="home.html">
       <video autoplay="autoplay" muted loop playsinline class="back-video">
-        <source src="assets/video/Bose/Bose.webm" type="video/mp4">
+        <!--<source src="assets/video/Bose/Bose.webm" type="video/mp4">-->
       </video>
     </a>
   </div>
@@ -212,9 +212,9 @@
 
   <section class="video-container" id="main-brand-video">
     <div class="backround-video">
-        <video autoplay="autoplay" muted loop playsinline class="back-video">
-          <source src="assets/video/Bose/Bose.webm" type="video/mp4">
-        </video>
+      <video autoplay="autoplay" muted loop playsinline class="back-video">
+        <!--<source src="assets/video/Bose/Bose.webm" type="video/mp4">-->
+      </video>
     </div>
   </section>
 
@@ -233,7 +233,8 @@
         </div>
         <div class="col-md-4">
           <div class="signature-image">
-            <img src="assets/images/Bose/m-footer.png" alt="Photo">
+            <img src="assets/images/Bose/m-footer.png" alt="Photo" data-bs-toggle="modal" data-bs-target="#brandModal"
+              class="signature">
           </div>
         </div>
       </div>
@@ -250,14 +251,43 @@
 </html>
 
 <script>
+
+  const descrip_cont = document.getElementById("product-area-container");
+  const galeria_cont = document.getElementById("gallery-container-grid");
+  const home_cont = "home";
+  const video_cont = document.getElementById("main-brand-video");
+
+  descrip_cont.onclick = function () {
+    descrip_cont.hidden = false;
+    galeria_cont.hidden = true;
+    video_cont.hidden = true;
+  }
+
+  galeria_cont.onclick = function () {
+    descrip_cont.hidden = true;
+    galeria_cont.hidden = false;
+    video_cont.hidden = true;
+  }
+
+  video_cont.onclick = function () {
+    descrip_cont.hidden = true;
+    galeria_cont.hidden = true;
+    video_cont.hidden = false;
+  }
+
   window.onload = (event) => {
     //recoge el id sobre la marca
-    var id = $('.momentum-body-1').attr("id").slice(0, -5);
-    //path general
+
+    var id = $('.momentum-body').attr("id").slice(0, -5);
+
     var path = "assets/images/" + id + "/";
-    //checkExtension();
+    var videoPath = "assets/video/acer/acer-video.webm";
+
     $('.marca-logo').attr('src', path + id + "-logo.png");
 
+    $(".back-video").html(`<source src="${videoPath}" type="video/mp4">`)
+
+    //alert(path)
     function UrlExists(url) {
       var http = new XMLHttpRequest();
       http.open('HEAD', url, false);
@@ -280,6 +310,50 @@
         //$('.nav-btn-gallery-' + i).hide();
       }
     }
+
+    var brandLogos = [
+      "acer", "asus", "bose", "dell", "echo", "fitbit-luxe",
+      "fitbit-sense", "garmin", "google", "homedics", "hp", "hypervolt-bluetooth", "jetson",
+      "joy-resolve", "kef", "kindle", "krups", "lenovo", "lg", "mavic-3", "miele",
+      "monitor-audio", "msi", "polar-pacer-pro", "roku", "samsung", "sonos", "sony",
+    ]
+
+    $(".signature").click(function (event) {
+
+      event.preventDefault();
+
+      $(".momentum-body").append(
+        `<div class="modal fade" id="brandModal" tabindex="-1" aria-labelledby="brandModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+			  <div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body brand-grid"></div>
+			  </div>
+			</div>
+		  </div>`
+      );
+
+      brandLogos.forEach((element) => {
+
+        var finalSrc = `assets/images/${element}/${element}-logo.png`;
+
+        $(".brand-grid").append(
+          `<div class="brand-container">
+					<button type="button" class="btn btn-link btn-${element}">
+						<img src=${finalSrc} alt="${element}"></img>
+					</button>
+				</div>`
+        );
+      });
+    })
+
+
+
+    $(".modal").on("hidden.bs.modal", function () {
+      $(".brand-container").remove()
+    });
   };
 
   function noClick() {
