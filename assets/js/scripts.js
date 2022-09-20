@@ -1,5 +1,7 @@
 $(document).ready(function(){
-  
+
+	const marca = "";
+	
 	$(".scrollBtn").click(function(){
     	$(".momentum,.banner-explorar-area").slideUp("slow");
   	});
@@ -39,15 +41,15 @@ $(document).ready(function(){
 
 			$(".brand-grid").append(
 				`<div class="brand-container">
-					<button type="button" class="btn btn-link" id="${element}">
+					<button type="button" class="btn ${element}">
 						<img src=${finalSrc} alt="${element}" data-bs-toggle="modal" data-bs-target="#brandModal" class="signature"></img>
 					</button>
 				</div>`
 			);
-			
 		});
-		
 	})
+
+
 
 	$(".modal").on("hidden.bs.modal", function(){
 		$(".brand-container").remove()
