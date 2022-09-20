@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-	const marca = "";
+	const marca = "acer-logo";
+	var body_cointainer = $(".momentum-body-1");
+	body_cointainer.attr("id", marca)
 	
 	$(".scrollBtn").click(function(){
     	$(".momentum,.banner-explorar-area").slideUp("slow");
