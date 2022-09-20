@@ -252,6 +252,7 @@
 
 <script>
 
+  var element = '';
   const descrip_cont = document.getElementById("product-area-container");
   const galeria_cont = document.getElementById("gallery-container-grid");
   const home_cont = "home";
@@ -276,13 +277,12 @@
   }
 
   window.onload = (event) => {
-    //recoge el id sobre la marca
-
+    
     var id = $('.momentum-body').attr("id").slice(0, -5);
 
     var path = "assets/images/" + id + "/";
+    
     var videoPath = "assets/video/acer/acer-video.webm";
-
     $('.marca-logo').attr('src', path + id + "-logo.png");
 
     $(".back-video").html(`<source src="${videoPath}" type="video/mp4">`)
@@ -341,15 +341,23 @@
 
         $(".brand-grid").append(
           `<div class="brand-container">
-					<button type="button" class="btn btn-link btn-${element}">
-						<img src=${finalSrc} alt="${element}"></img>
-					</button>
+              <button type="button" class="btn btn-link brand_btn btn-${element}" id="${element}" data-bs-dismiss="modal">
+                <img src=${finalSrc} alt="${element}" id="${element}"></img>
+              </button>
 				</div>`
+
         );
       });
+
+
+      $(".brand_btn").click(function(){
+        let current_btn_id = $(this).attr('id');
+        $('.momentum-body').attr("id", current_btn_id);
+        var path = "assets/images/" + current_btn_id + "/";
+        $('.marca-logo').attr('src', path + current_btn_id + "-logo.png");
+      })
+
     })
-
-
 
     $(".modal").on("hidden.bs.modal", function () {
       $(".brand-container").remove()
