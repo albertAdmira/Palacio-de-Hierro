@@ -39,21 +39,21 @@
       <div class="col-md-4">
         <nav class="product-tabs">
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><img class="img-src-grid-gallery-1" src="assets/images/bose/p-0.png" alt="Photo">
+            <button class="nav-link active" id="nav-btn-gallery-1" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><img class="img-src-grid-gallery-1" src="assets/images/bose/p-0.png" alt="Photo">
             </button>
-            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><img class="img-src-grid-gallery-2" src="assets/images/bose/p-1.png" alt="Photo">
+            <button class="nav-link" id="nav-btn-gallery-2" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><img class="img-src-grid-gallery-2" src="assets/images/bose/p-1.png" alt="Photo">
             </button>
-            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-3" src="assets/images/bose/p-2.png" alt="Photo">
+            <button class="nav-link" id="nav-btn-gallery-3" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-3" src="assets/images/bose/p-2.png" alt="Photo">
             </button>
-            <button class="nav-link" id="nav-product-tab" data-bs-toggle="tab" data-bs-target="#nav-product" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-4" src="assets/images/bose/p-3.png" alt="Photo">
+            <button class="nav-link" id="nav-btn-gallery-4" data-bs-toggle="tab" data-bs-target="#nav-product" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-4" src="assets/images/bose/p-3.png" alt="Photo">
             </button>
-            <button class="nav-link" id="nav-products-tab" data-bs-toggle="tab" data-bs-target="#nav-products" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-5" src="assets/images/bose/p-4.png" alt="Photo">
+            <button class="nav-link" id="nav-btn-gallery-5" data-bs-toggle="tab" data-bs-target="#nav-products" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-5" src="assets/images/bose/p-4.png" alt="Photo">
             </button>
-            <button class="nav-link" id="nav-products-1-tab" data-bs-toggle="tab" data-bs-target="#nav-products-1" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-6" src="assets/images/bose/p-5.png" alt="Photo">
+            <button class="nav-link" id="nav-btn-gallery-6" data-bs-toggle="tab" data-bs-target="#nav-products-1" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-6" src="assets/images/bose/p-5.png" alt="Photo">
             </button>
-             <button class="nav-link" id="nav-products-2-tab" data-bs-toggle="tab" data-bs-target="#nav-products-2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-7" src="assets/images/bose/p-6.png" alt="Photo">
+             <button class="nav-link" id="nav-btn-gallery-7" data-bs-toggle="tab" data-bs-target="#nav-products-2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-7" src="assets/images/bose/p-6.png" alt="Photo">
              </button>
-             <button class="nav-link" id="nav-products-3-tab" data-bs-toggle="tab" data-bs-target="#nav-products-3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-8" src="assets/images/bose/p-7.png" alt="Photo">
+             <button class="nav-link" id="nav-btn-gallery-8" data-bs-toggle="tab" data-bs-target="#nav-products-3" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img class="img-src-grid-gallery-8" src="assets/images/bose/p-7.png" alt="Photo">
              </button>
           </div>
         </nav>
@@ -134,21 +134,15 @@
       //$('.marca-logo').attr('src', path + "p-"+ 1 +".jpg");
 
       for(i=1; i <= 8; i++){
-        $('.img-src-grid-gallery-' + i).attr('src', path + "p-"+ (i)+".jpg");
+        if(path + "p-"+ (i)+".jpg"){
+          $('.img-src-grid-gallery-' + i).attr('src', path + "p-"+ (i)+".jpg");
+        }else{
+          $("nav-btn-gallery-" + i).click(function(){
+            this.toggleClass("nav-btn-gallery-" + i);
+          });
+        }
+         
       }
     };
-
-    function checkExtension(check, opcion1, opcion2, classHide){
-      $.get(path + id + "-logo.ai") //check
-      .done(function() { 
-        $('.marca-logo').attr('src',path + id + "-logo.ai");
-      }).fail(function() {
-        if(path + id + "-logo.png"){
-          $('.marca-logo').attr('src',path + id + "-logo.png");
-        }else{
-          $(classHide).hide();
-        }
-      })
-    }
 
 </script>
