@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Product Demo Video</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Demo Video</title>
   <link rel="icon" href="assets/images/Bose/favicon.png">
   <!-- fonts css -->
   <link rel="stylesheet" href="assets/fonts/stylesheet.css">
@@ -16,7 +17,8 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
-<body>
+
+<body class="momentum-body-1" id="msi-logo">
   <!-- Start Header Area -->
   <header class="header-area">
     <div class="container">
@@ -30,39 +32,257 @@
       </div>
     </div>
   </header>
-<div class="backround-video">
-  <a href="home.html">
-  <video autoplay="autoplay" muted loop playsinline class="back-video">
-    <source src="assets/video/Bose/Bose.webm" type="video/mp4">
-  </video>
-  </a>
-</div>
-<footer class="main-footer-area">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="main-footer-menu">
-          <ul>
-           <a href="index.html"><img src="assets/images/Bose/center.png" alt="Photo"></a>
-            <a href="description.html">DESCRIPCIÓN</a>
-            <a href="gallery.html">GALERÍA</a>
-            <a href="video.html">video</a>
-          </ul>
+
+  <div class="backround-video">
+    <a href="home.html">
+      <video autoplay="autoplay" muted loop playsinline class="back-video">
+        <source src="assets/video/Bose/Bose.webm" type="video/mp4">
+      </video>
+    </a>
+  </div>
+
+  <section class="producto-container" id="product-area-container">
+    <section class="product-area">
+      <div class="container">
+        <div class="pointer-area container">
+          <img src="assets/images/Bose/pointer.png" alt="pointe">
+        </div>
+        <div class="row">
+          <div class="col-md-10 product-details">
+            <div class="row products-top">
+              <div class="col-md-4 for-mobile">
+                <div class="product-title">
+                  <h1>Audífonos</h1>
+                  <h2>Bluetooth </h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut </p>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="product-image">
+                  <img src="assets/images/Bose/product-1.png" alt="Photo">
+                </div>
+              </div>
+              <div class="col-md-4 for-desktop">
+                <div class="product-title">
+                  <h1>Audífonos</h1>
+                  <h2>Bluetooth </h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut </p>
+                </div>
+              </div>
+            </div>
+            <div class="row products-top">
+              <div class="col-md-6">
+                <div class="product-image">
+                  <img src="assets/images/Bose/product-2.png" alt="Photo">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="product-image">
+                  <img src="assets/images/Bose/product-3.png" alt="Photo">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="product-desc">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut nisi ut </p>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="product-image single-product">
+                  <img src="assets/images/Bose/product-4.png" alt="Photo">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="signature-image">
-          <img src="assets/images/Bose/m-footer.png" alt="Photo">
+    </section>
+    <footer class="footer-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer">
+              <ul>
+                <a href="index.html#gallery-container-grid">GALERÍA PRODUCTO</a>
+                <a href="index.html#gallery-container-grid"><img src="assets/images/Bose/gallery.png" alt="Photo"></a>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <section class="gallery-container" id="gallery-container-grid">
+    <!-- Start Product gallery area -->
+    <section class="product-gallery-area">
+      <div class="container">
+        <div class="row gx-0 gy-0">
+          <div class="col-md-4">
+            <nav class="product-tabs">
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-btn-gallery-1" data-bs-toggle="tab" data-bs-target="#nav-home"
+                  type="button" role="tab" aria-controls="nav-home" aria-selected="true"><img
+                    class="img-src-grid-gallery-1" src="assets/images/default/p-1.png" alt="Photo">
+                </button>
+                <button class="nav-link" id="nav-btn-gallery-2" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                  type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><img
+                    class="img-src-grid-gallery-2" src="assets/images/default/p-2.png" alt="Photo">
+                </button>
+                <button class="nav-link" id="nav-btn-gallery-3" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                  type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img
+                    class="img-src-grid-gallery-3" src="assets/images/default/p-3.png" alt="Photo">
+                </button>
+                <button class="nav-link" id="nav-btn-gallery-4" data-bs-toggle="tab" data-bs-target="#nav-product"
+                  type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img
+                    class="img-src-grid-gallery-4" src="assets/images/default/p-4.png" alt="Photo">
+                </button>
+                <button class="nav-link" id="nav-btn-gallery-5" data-bs-toggle="tab" data-bs-target="#nav-products"
+                  type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img
+                    class="img-src-grid-gallery-5" src="assets/images/default/p-5.png" alt="Photo">
+                </button>
+                <button class="nav-link" id="nav-btn-gallery-6" data-bs-toggle="tab" data-bs-target="#nav-products-1"
+                  type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img
+                    class="img-src-grid-gallery-6" src="assets/images/default/p-6.png" alt="Photo">
+                </button>
+                <button class="nav-link" id="nav-btn-gallery-7" data-bs-toggle="tab" data-bs-target="#nav-products-2"
+                  type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img
+                    class="img-src-grid-gallery-7" src="assets/images/default/p-7.png" alt="Photo">
+                </button>
+                <button class="nav-link" id="nav-btn-gallery-8" data-bs-toggle="tab" data-bs-target="#nav-products-3"
+                  type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><img
+                    class="img-src-grid-gallery-8" src="assets/images/default/p-8.png" alt="Photo">
+                </button>
+              </div>
+            </nav>
+          </div>
+          <div class="col-md-8">
+            <div class="product-view">
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                  tabindex="0">
+                  <img class="img-src-grid-gallery-1" src="assets/images/default/p-1.png" alt="Photo">
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                  tabindex="0">
+                  <img class="img-src-grid-gallery-2" src="assets/images/default/p-2.png" alt="Photo">
+                </div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+                  tabindex="0">
+                  <img class="img-src-grid-gallery-3" src="assets/images/default/p-3.png" alt="Photo">
+                </div>
+                <div class="tab-pane fade" id="nav-product" role="tabpanel" aria-labelledby="nav-product-tab"
+                  tabindex="0">
+                  <img class="img-src-grid-gallery-4" src="assets/images/default/p-4.png" alt="Photo">
+                </div>
+                <div class="tab-pane fade" id="nav-products" role="tabpanel" aria-labelledby="nav-products-tab"
+                  tabindex="0">
+                  <img class="img-src-grid-gallery-5" src="assets/images/default/p-5.png" alt="Photo">
+                </div>
+                <div class="tab-pane fade" id="nav-products-1" role="tabpanel" aria-labelledby="nav-products-1-tab"
+                  tabindex="0">
+                  <img class="img-src-grid-gallery-6" src="assets/images/default/p-6.png" alt="Photo">
+                </div>
+                <div class="tab-pane fade" id="nav-products-2" role="tabpanel" aria-labelledby="nav-products-2-tab"
+                  tabindex="0">
+                  <img class="img-src-grid-gallery-7" src="assets/images/default/p-7.png" alt="Photo">
+                </div>
+                <div class="tab-pane fade" id="nav-products-3" role="tabpanel" aria-labelledby="nav-products-3-tab"
+                  tabindex="0">
+                  <img class="img-src-grid-gallery-8" src="assets/images/default/p-8.png" alt="Photo">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Product gallery area -->
+  </section>
+
+  <section class="video-container" id="main-brand-video">
+    <div class="backround-video">
+        <video autoplay="autoplay" muted loop playsinline class="back-video">
+          <source src="assets/video/Bose/Bose.webm" type="video/mp4">
+        </video>
+    </div>
+  </section>
+
+  <footer class="main-footer-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="main-footer-menu">
+            <ul>
+              <a href="index.html"><img src="assets/images/Bose/center.png" alt="Photo"></a>
+              <a href="index.html#product-area-container">DESCRIPCIÓN</a>
+              <a href="index.html#gallery-container-grid">GALERÍA</a>
+              <a href="index.html#main-brand-video">video</a>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="signature-image">
+            <img src="assets/images/Bose/m-footer.png" alt="Photo">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-<!-- js file -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/scripts.js"></script>
+  </footer>
+  <!-- js file -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
 
 </body>
+
 </html>
+
+<script>
+  window.onload = (event) => {
+    //recoge el id sobre la marca
+    var id = $('.momentum-body-1').attr("id").slice(0, -5);
+    //path general
+    var path = "assets/images/" + id + "/";
+    //checkExtension();
+    $('.marca-logo').attr('src', path + id + "-logo.png");
+
+    function UrlExists(url) {
+      var http = new XMLHttpRequest();
+      http.open('HEAD', url, false);
+      http.send();
+      return http.status != 404;
+    }
+
+    for (i = 1; i <= 8; i++) {
+      try {
+        if (path) {
+          if (UrlExists(path + "p-" + (i) + ".jpg")) {
+            $('.img-src-grid-gallery-' + i).attr('src', path + "p-" + (i) + ".jpg");
+          } else {
+            //alert('.nav-btn-gallery-' + i);
+            $('#nav-btn-gallery-' + i).attr("disabled", true);
+          }
+        }
+
+      } catch (err) {
+        //$('.nav-btn-gallery-' + i).hide();
+      }
+    }
+  };
+
+  function noClick() {
+    return;
+  }
+</script>

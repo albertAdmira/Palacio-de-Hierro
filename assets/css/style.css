@@ -1,6 +1,8 @@
 html{
   font-size:62.5%;
+  scroll-behavior: smooth;
 }
+
 body{
   font-family: 'Gotham';
   font-weight: normal;
@@ -62,12 +64,20 @@ p {
           justify-content: space-between;
 }
 .header-area {
-  padding: 35px 0;
   background: #414042;
   position: fixed;
   width: 100%;
+  padding: 2.5vh;
   top: 0;
   z-index: 999;
+}
+
+.header-area .logo {
+  margin-top: 2%;
+}
+
+.header-area .logo .marca-logo {
+  width: 13vh;
 }
 .header-menu ul {
   display: -webkit-box;
@@ -466,4 +476,8 @@ p {
   background-color: #918e93;
   border: none;
   padding: 15px;
+}
+
+.producto-container{
+  background-color: #000;
 }
