@@ -418,7 +418,7 @@ p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 100vh;
+    /*height: 100vh;*/
     background: #000;
     justify-content: center;
     align-items: center;
