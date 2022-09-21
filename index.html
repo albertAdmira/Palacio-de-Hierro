@@ -26,7 +26,6 @@
         <div class="col-md-12">
           <div class="logo">
             <a href="index.html"><img src="assets/images/bose/logo.png" alt="Photo"></a>
-            <!--<a href="index.html"></a>-->
             <img class="marca-logo" src="assets/images/bose/bose-logo.png" alt="Photo">
           </div>
         </div>
@@ -34,12 +33,14 @@
     </div>
   </header>
 
+  <!-- Home screen presentation video -->
   <div class="backround-video" id="init-video-container" style="display: block;">
     <video autoplay="autoplay" muted loop playsinline class="back-video">
       <source src="assets/video/bose/bose-video.webm" id="video-src" type="video/mp4">
     </video>
   </div>
 
+  <!-- Description -->
   <section class="producto-container" id="product-area-container" style="display: none;">
     <section class="product-area">
       <div class="container">
@@ -106,22 +107,6 @@
         </div>
       </div>
     </section>
-    <footer class="footer-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <!--
-            <div class="footer">
-              <ul>
-                <a href="index.html#gallery-container-grid">GALERÍA PRODUCTO</a>
-                <a href="index.html#gallery-container-grid"><img src="assets/images/bose/gallery.png" alt="Photo"></a>
-              </ul>
-            </div>
-            -->
-          </div>
-        </div>
-      </div>
-    </footer>
   </section>
 
   <section class="gallery-container" id="gallery-container-grid" style="display: none;">
@@ -129,6 +114,7 @@
     <section class="product-gallery-area">
       <div class="container">
         <div class="row gx-0 gy-0">
+          <!-- Start content Grid img-->
           <div class="col-md-4">
             <nav class="product-tabs">
               <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -167,7 +153,9 @@
               </div>
             </nav>
           </div>
+          <!-- End content Grid img -->
           <div class="col-md-8">
+            <!-- Start view content img-->
             <div class="product-view">
               <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
@@ -204,13 +192,14 @@
                 </div>
               </div>
             </div>
+            <!-- End view content img -->
           </div>
         </div>
       </div>
     </section>
     <!-- End Product gallery area -->
   </section>
-
+  <!-- video content -->
   <section class="video-container" id="main-brand-video" style="display: none;">
     <div class="backround-video">
       <video autoplay="autoplay" muted loop playsinline class="back-video">
@@ -219,6 +208,7 @@
     </div>
 
   </section>
+  <!-- Start footer menu -->
   <footer class="main-footer-area">
     <div class="container">
       <div class="row">
@@ -226,7 +216,6 @@
           <div class="main-footer-menu">
             <ul>
               <a onclick="div2('init-video-container')"><img src="assets/images/bose/center.png" alt="Photo"></a>
-              <!-- href="index.html" -->
               <a href="index.html#product-area-container" onclick="div2('product-area-container')">DESCRIPCIÓN</a>
               <a href="index.html#gallery-container-grid" onclick="div2('gallery-container-grid')">GALERÍA</a>
               <a href="index.html#main-brand-video" onclick="div2('main-brand-video')">video</a>
@@ -242,6 +231,8 @@
       </div>
     </div>
   </footer>
+  <!-- End foot menu -->
+
   <!-- js file -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/popper.min.js"></script>
@@ -253,7 +244,7 @@
 </html>
 
 <script>
-
+  //Hide and show content
   function div2(name) {
     document.getElementById("product-area-container").style.display = "none";
     document.getElementById("gallery-container-grid").style.display = "none";
@@ -263,8 +254,8 @@
     document.getElementById(name).style.display = "block";
   }
 
+  //Add id content to body
   $('.momentum-body').attr("id", 'bose');
-  //$(".back-video").html('<source src="assets/videos/bose/bose-video.webm" type="video/mp4">')
 
   var brandLogos = [
     "acer", "asus", "bose", "dell", "echo", "fitbit-luxe",
@@ -275,6 +266,7 @@
     "samsung", "sonos", "sony",
   ]
 
+  //Open grid brandlogos
   $(".signature").click(function (event) {
 
     event.preventDefault();
@@ -292,6 +284,7 @@
 		  </div>`
     );
 
+    //Add brand img's to modal
     brandLogos.forEach((element) => {
 
       var finalSrc = `assets/images/${element}/${element}-logo.png`;
@@ -329,7 +322,8 @@
               <source src="${videoPath}" id="video-src" type="video/mp4">
           </video>`
       )
-
+      
+      //path validator
       function UrlExists(url) {
         var http = new XMLHttpRequest();
         http.open('HEAD', url, false);
@@ -337,21 +331,24 @@
         return http.status != 404;
       }
 
+      //Add img to grid content
       for (i = 1; i <= 8; i++) {
         try {
           if (imagePath) {
             if (UrlExists(imagePath + "p-" + (i) + ".jpg")) {
               $('.img-src-grid-gallery-' + i).attr('src', imagePath + "p-" + (i) + ".jpg");
               $('#nav-btn-gallery-' + i).attr("disabled", false);
-            } else {
-              //alert('.nav-btn-gallery-' + i);
+            }else if(UrlExists(imagePath + "p-" + (i) + ".png")){
+              $('.img-src-grid-gallery-' + i).attr('src', imagePath + "p-" + (i) + ".png");
+              $('#nav-btn-gallery-' + i).attr("disabled", false);
+            }else {
               $('#nav-btn-gallery-' + i).attr("disabled", true);
               $('.img-src-grid-gallery-' + i).attr('src', 'assets/images/default/' + "p-" + (i) + ".png");
             }
           }
 
         } catch (err) {
-          //$('.nav-btn-gallery-' + i).hide();
+
         }
       }
 
