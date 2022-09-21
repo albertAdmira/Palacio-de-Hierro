@@ -423,6 +423,7 @@ p {
     justify-content: center;
     align-items: center;
     z-index: 1;
+    margin-top: 70px;
 }
 .backround-video a{
   display: flex;
