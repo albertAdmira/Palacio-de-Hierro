@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
-<body class="momentum-body" id="acer-logo">
+<body class="momentum-body" id="bose-logo">
   <!-- Start Header Area -->
   <header class="header-area">
     <div class="container">
@@ -277,39 +277,8 @@
   }
 
   window.onload = (event) => {
-    
-    var id = $('.momentum-body').attr("id").slice(0, -5);
 
-    var path = "assets/images/" + id + "/";
-    
-    var videoPath = "assets/video/acer/acer-video.webm";
-    $('.marca-logo').attr('src', path + id + "-logo.png");
-
-    $(".back-video").html(`<source src="${videoPath}" type="video/mp4">`)
-
-    //alert(path)
-    function UrlExists(url) {
-      var http = new XMLHttpRequest();
-      http.open('HEAD', url, false);
-      http.send();
-      return http.status != 404;
-    }
-
-    for (i = 1; i <= 8; i++) {
-      try {
-        if (path) {
-          if (UrlExists(path + "p-" + (i) + ".jpg")) {
-            $('.img-src-grid-gallery-' + i).attr('src', path + "p-" + (i) + ".jpg");
-          } else {
-            //alert('.nav-btn-gallery-' + i);
-            $('#nav-btn-gallery-' + i).attr("disabled", true);
-          }
-        }
-
-      } catch (err) {
-        //$('.nav-btn-gallery-' + i).hide();
-      }
-    }
+    $('.momentum-body').attr("id", 'bose');
 
     var brandLogos = [
       "acer", "asus", "bose", "dell", "echo", "fitbit-luxe",
@@ -341,7 +310,7 @@
 
         $(".brand-grid").append(
           `<div class="brand-container">
-              <button type="button" class="btn btn-link brand_btn btn-${element}" id="${element}" data-bs-dismiss="modal">
+              <button type="button" class="btn btn-link brand_btn btn-${element}" id="brand-${element}" data-bs-dismiss="modal">
                 <img src=${finalSrc} alt="${element}" id="${element}"></img>
               </button>
 				</div>`
@@ -349,12 +318,45 @@
         );
       });
 
+      //Modal brand-buttons event
+      $(".brand_btn").click(function () {
+        let currentBtnId = $(this).attr('id');
+        let currentBtnLength = currentBtnId.length;
+        let brandStart = currentBtnId.indexOf('-');
+        let finalId = currentBtnId.substring(brandStart + 1, currentBtnLength)
 
-      $(".brand_btn").click(function(){
-        let current_btn_id = $(this).attr('id');
-        $('.momentum-body').attr("id", current_btn_id);
-        var path = "assets/images/" + current_btn_id + "/";
-        $('.marca-logo').attr('src', path + current_btn_id + "-logo.png");
+        $('.momentum-body').attr("id", finalId);
+        
+        var imagePath = "assets/images/" + finalId + "/";
+        $('.marca-logo').attr('src', imagePath + finalId + "-logo.png");
+
+        var videoPath = "assets/video/acer/acer-video.webm";
+
+        $(".back-video").html(`<source src="${videoPath}" type="video/mp4">`)
+
+        function UrlExists(url) {
+          var http = new XMLHttpRequest();
+          http.open('HEAD', url, false);
+          http.send();
+          return http.status != 404;
+        }
+
+        for (i = 1; i <= 8; i++) {
+          try {
+            if (imagePath) {
+              if (UrlExists(imagePath + "p-" + (i) + ".jpg")) {
+                $('.img-src-grid-gallery-' + i).attr('src', imagePath + "p-" + (i) + ".jpg");
+              } else {
+                //alert('.nav-btn-gallery-' + i);
+                $('#nav-btn-gallery-' + i).attr("disabled", true);
+              }
+            }
+
+          } catch (err) {
+            //$('.nav-btn-gallery-' + i).hide();
+          }
+        }
+
       })
 
     })
