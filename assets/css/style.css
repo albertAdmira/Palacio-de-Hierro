@@ -67,7 +67,7 @@ p {
   background: #414042;
   position: fixed;
   width: 100%;
-  padding: 2.5vh;
+  padding: 1.3vh;
   top: 0;
   z-index: 999;
 }
@@ -188,7 +188,7 @@ p {
 }
 .signature-image img {
   width: 143px;
-  height: auto;
+  height: 6.5vh;
 }
 
 
