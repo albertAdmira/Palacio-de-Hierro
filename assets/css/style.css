@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 html{
   font-size:62.5%;
   scroll-behavior: smooth;
@@ -46,6 +49,7 @@ p {
   max-width: 181px;
   width: 100%;
   height: auto;
+  padding: 1.3vh;
 }
 .logo img {
   max-width: 147px;
@@ -144,7 +148,7 @@ p {
 }
 .main-footer-area {
   background: #707070;
-  padding: 19px 0 24px 0;
+  padding: 2vh;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -187,7 +191,7 @@ p {
   text-align: right;
 }
 .signature-image img {
-  width: 143px;
+  width: 120px;
   height: 6.5vh;
 }
 
