@@ -331,6 +331,7 @@
             if (imagePath) {
               if (UrlExists(imagePath + "p-" + (i) + ".jpg")) {
                 $('.img-src-grid-gallery-' + i).attr('src', imagePath + "p-" + (i) + ".jpg");
+                $('#nav-btn-gallery-' + i).attr("disabled", false);
               } else {
                 //alert('.nav-btn-gallery-' + i);
                 $('#nav-btn-gallery-' + i).attr("disabled", true);
